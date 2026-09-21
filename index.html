@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Home apps</title>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+:root{--teal:#00B3B2;--teal-dark:#007D7D;--teal-deep:#006262;--teal-surface:#E6F7F7;--carmine:#D93B5C;--grey-dark:#757575;--bg:#f4f5f7;--ink:#202124}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Open Sans","Segoe UI",Arial,sans-serif;line-height:1.5}
+.wrap{max-width:720px;margin:0 auto;padding:24px 16px 60px}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--teal-dark)}
+h1{font-weight:300;font-size:clamp(28px,7vw,40px);letter-spacing:-.015em;margin:2px 0 8px}
+.hair{height:1px;border:0;background:linear-gradient(90deg,var(--carmine),var(--teal));margin:14px 0 20px}
+.grid{display:grid;gap:12px}
+a.app{display:flex;align-items:center;gap:16px;min-height:88px;padding:16px;background:#fff;border-radius:16px;box-shadow:0 1px 3px rgba(0,0,0,.08);text-decoration:none;color:inherit;transition:transform .15s,box-shadow .15s}
+a.app:hover,a.app:focus-visible{transform:translateY(-2px);box-shadow:0 3px 8px rgba(0,0,0,.12);outline:none}
+.ic{flex:0 0 48px;height:48px;border-radius:50%;background:var(--teal-surface);display:flex;align-items:center;justify-content:center}
+.ic svg{width:26px;height:26px;stroke:var(--teal-dark);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.t{font-size:20px;font-weight:600;color:var(--teal-deep)}
+.d{font-size:14px;color:var(--grey-dark)}
+.go{margin-left:auto;color:var(--teal-dark);font-size:22px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="eyebrow">Our apps</div>
+  <h1>Home</h1>
+  <hr class="hair">
+  <div class="grid" id="grid"></div>
+</div>
+<script>
+// To add an app later, add one line to this list.
+const APPS = [
+  {name:"Weaning plan", desc:"Food introductions and allergen tracking", url:"https://hershpatel1.github.io/weaning-plan/", icon:'<path d="M12 3c-3 4-5 6-5 9a5 5 0 0010 0c0-3-2-5-5-9z"/>'},
+  {name:"Household spending", desc:"Budgets and transactions", url:"https://hershpatel1.github.io/household-spending/", icon:'<circle cx="12" cy="12" r="9"/><path d="M14.5 9a3 3 0 00-2.5-1.2c-1.7 0-2.8.9-2.8 2.1 0 3 5.6 1.5 5.6 4.4 0 1.2-1.2 2.1-2.8 2.1A3.2 3.2 0 019.5 15M12 6.5v1.3M12 16.2v1.3"/>'},
+  {name:"Milk bags", desc:"Frozen milk stock, defrost and use by", url:"https://hershpatel1.github.io/milk-bags/", icon:'<path d="M8 3h8l1 4H7zM7 7h10l-1 13H8z"/><path d="M9.5 12h5"/>'}
+];
+document.getElementById("grid").innerHTML = APPS.map(a =>
+  `<a class="app" href="${a.url}"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true">${a.icon}</svg></div>
+   <div><div class="t">${a.name}</div><div class="d">${a.desc}</div></div><div class="go" aria-hidden="true">&rsaquo;</div></a>`).join("");
+</script>
+</body>
+</html>
