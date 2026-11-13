@@ -33,9 +33,8 @@ a.app:hover,a.app:focus-visible{transform:translateY(-2px);box-shadow:0 3px 8px 
 <script>
 // To add an app later, add one line to this list.
 const APPS = [
-  {name:"Weaning plan", desc:"Food introductions and allergen tracking", url:"https://hershpatel1.github.io/weaning-plan/", icon:'<path d="M12 3c-3 4-5 6-5 9a5 5 0 0010 0c0-3-2-5-5-9z"/>'},
   {name:"Household spending", desc:"Budgets and transactions", url:"https://hershpatel1.github.io/household-spending/", icon:'<circle cx="12" cy="12" r="9"/><path d="M14.5 9a3 3 0 00-2.5-1.2c-1.7 0-2.8.9-2.8 2.1 0 3 5.6 1.5 5.6 4.4 0 1.2-1.2 2.1-2.8 2.1A3.2 3.2 0 019.5 15M12 6.5v1.3M12 16.2v1.3"/>'},
-  {name:"Milk bags", desc:"Frozen milk stock, defrost and use by", url:"https://hershpatel1.github.io/milk-bags/", icon:'<path d="M8 3h8l1 4H7zM7 7h10l-1 13H8z"/><path d="M9.5 12h5"/>'}
+  {name:"Riyaan Wishlist", desc:"For Riyaan's gifts for Xmas and Birthdays", url:"https://hershpatel1.github.io/riyaan-wishlist/", icon:'<path d="M8 3h8l1 4H7zM7 7h10l-1 13H8z"/><path d="M9.5 12h5"/>'}
 ];
 document.getElementById("grid").innerHTML = APPS.map(a =>
   `<a class="app" href="${a.url}"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true">${a.icon}</svg></div>
